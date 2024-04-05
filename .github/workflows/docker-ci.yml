@@ -38,8 +38,8 @@ jobs:
         run: selenium/manager/linux/selenium-manager --browser chrome
 
       # added this for the shell script
-      - name: Wait for Web Service
-        run: sh wait-for-service.sh
+      - name: Wait for Web Server
+        run: sh wait-for-server.sh
 
       - name: Launch Web Service
         run: docker-compose up -d
