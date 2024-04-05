@@ -37,12 +37,12 @@ jobs:
       - name: Install Chrome Web Driver
         run: selenium/manager/linux/selenium-manager --browser chrome
 
+      - name: Launch Web Service
+        run: docker-compose up -d
+
       # added this for the shell script
       - name: Wait for Web Server
         run: sh wait-for-server.sh
-
-      - name: Launch Web Service
-        run: docker-compose up -d
 
       - name: Run Selenium Tests
         run: cd selenium && mvn test
